@@ -41,20 +41,19 @@ pipeline:
                   timeout: ""
                   type: Run
               - step:
-                  identifier: dockerbuild
-                  name: docker_build
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_2
+                  identifier: BuildAndPushDockerRegistry_2
                   spec:
-                    caching: true
-                    connectorRef: <+input>
-                    repo: hello/world
+                    connectorRef: account.DockerHub
+                    repo: reactpipeline
                     tags:
                       - latest
-                  timeout: ""
-                  type: BuildAndPushDockerRegistry
+                    dockerfile: Dockerfile
           platform:
-            arch: Arm64
-            os: MacOS
+            os: Linux
+            arch: Amd64
           runtime:
+            type: Cloud
             spec: {}
-            type: Docker
         type: CI
