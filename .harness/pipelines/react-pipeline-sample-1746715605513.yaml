@@ -37,6 +37,7 @@ pipeline:
                   identifier: build
                   name: build
                   spec:
+                    shell: Sh
                     command: npm run build
                   timeout: ""
                   type: Run
@@ -44,17 +45,17 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    caching: true
                     connectorRef: <+input>
-                    repo: hello/world
+                    repo: baiyun/reactpipeline
                     tags:
                       - latest
+                    caching: true
                   timeout: ""
                   type: BuildAndPushDockerRegistry
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
