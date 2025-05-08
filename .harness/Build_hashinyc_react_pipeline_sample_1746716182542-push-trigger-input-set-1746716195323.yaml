@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_hashinyc_react_pipeline_sample_1746716182542-push-trigger-input-set
+  identifier: Build_hashinyc_react_pipeline_sample_1746716182542pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_hashinyc_react_pipeline_sample_1746716182542
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
