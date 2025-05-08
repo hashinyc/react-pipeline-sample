@@ -8,7 +8,10 @@ pipeline:
       codebase:
         connectorRef: account.Github_OAuth_1746652796717
         repoName: hashinyc/react-pipeline-sample
-        build: <+input>
+        build:
+          type: branch
+          spec:
+            branch: main
         sparseCheckout: []
   stages:
     - stage:
@@ -45,7 +48,7 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    connectorRef: <+input>
+                    connectorRef: DockerHub
                     repo: baiyun/reactpipeline
                     tags:
                       - latest
@@ -55,7 +58,7 @@ pipeline:
                   type: BuildAndPushDockerRegistry
           platform:
             os: Linux
-            arch: Arm64
+            arch: Amd64
           runtime:
             type: Cloud
             spec: {}
