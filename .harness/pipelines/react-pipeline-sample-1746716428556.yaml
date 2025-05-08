@@ -48,7 +48,7 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    connectorRef: DockerHub
+                    connectorRef: D0yqg5GgSGOfjKS7P3jmxA
                     repo: baiyun/reactpipeline
                     tags:
                       - latest
