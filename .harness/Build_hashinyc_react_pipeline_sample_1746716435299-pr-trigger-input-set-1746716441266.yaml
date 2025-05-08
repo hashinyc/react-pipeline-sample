@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_hashinyc_react_pipeline_sample_1746716435299-pr-trigger-input-set
+  identifier: Build_hashinyc_react_pipeline_sample_1746716435299prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_hashinyc_react_pipeline_sample_1746716435299
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
